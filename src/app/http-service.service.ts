@@ -34,4 +34,10 @@ export class HttpServiceService {
        responseType:"text"
      }));
    }
+
+   deleteEmployee(id:any){
+    return (this.http.delete(`${this.baseUrl}deleteEmp/${id}`,{
+      responseType:"text"
+    }));
+   }
 }

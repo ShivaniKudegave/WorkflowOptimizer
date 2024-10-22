@@ -46,4 +46,20 @@ export class HomeComponent implements OnInit{
       alert("Please selsect a record to update a record");
     }
   }
+
+  onDelete(){
+    if(this.isSelect){
+      //Logic for Delete
+      if(confirm("Do you want to delete this record...")){
+        this.service.deleteEmployee(this.id)
+        .subscribe((response)=>{
+          console.log(response);
+          this.getDataFromBackend();
+        })
+      }
+
+    }else{
+      alert("Please select a record to delete a record....")
+    }
+  }
 }
